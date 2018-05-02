@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<!--
+  ~ Licensed to the Apache Software Foundation (ASF) under one
+  ~ or more contributor license agreements.  See the NOTICE file
+  ~ distributed with this work for additional information
+  ~ regarding copyright ownership.  The ASF licenses this file
+  ~ to you under the Apache License, Version 2.0 (the
+  ~ "License"); you may not use this file except in compliance
+  ~ with the License.  You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+<configuration>
+  <property>
+   <name>alluxio.log.dir</name>
+   <description>Alluxio Log Directory</description>
+   <value>/var/log/alluxio</value>
+  </property>
+
+  <property>
+    <name>alluxio.pid.dir</name>
+    <description>Alluxio pid Directory</description>
+    <value>/var/run/alluxio</value>
+  </property>
+
+  <property>
+    <name>alluxio.archive.file</name>
+    <description>alluxio archive file</description>
+    <value>alluxio-1.6.1-hadoop-2.7-bin.tar.gz</value>
+  </property>
+
+  <property require-input="true">
+    <name>alluxio.underfs.address</name>
+    <description>Alluxio UnderFS Address</description>
+    <value></value>
+  </property>
+
+  <property require-input="true">
+    <name>alluxio.master.journal.folder</name>
+    <description>Alluxio Master Journal Folder</description>
+    <value>hdfs://0.0.0.0:8020/alluxio/journal</value>
+  </property>
+
+  <property>
+    <name>alluxio.worker.memory</name>
+    <description>Alluxio Worker Memory</description>
+    <value>2GB</value>
+  </property>
+
+  <property require-input="true">
+    <name>alluxio.zookeeper.address</name>
+    <description>Alluxio Zookeeper Address</description>
+    <value></value>
+  </property>
+
+  <property>
+    <name>alluxio_user</name>
+    <value>alluxio</value>
+    <property-type>USER</property-type>
+    <description>Alluxio Service Account User</description>
+  </property>
+
+  <property>
+    <name>alluxio.ui.port</name>
+    <description>Alluxio UI Port</description>
+    <value>19999</value>   
+  </property>
+</configuration>
