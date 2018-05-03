@@ -15,7 +15,7 @@ Install, start/stop, status, service check functional
 git clone https://github.com/elbert-lau/ambari-alluxio-service /var/lib/ambari-server/resources/stacks/HDP/2.6/services/ALLUXIO
 
 #git has a 100mb file limit, download alluxio source to your stack dir
-wget http://alluxio.org/downloads/files/1.0.1/alluxio-1.6.1-bin.tar.gz -P /var/lib/ambari-server/resources/stacks/HDP/2.6/services/ALLUXIO/package/files 
+wget http://alluxio.org/downloads/files/1.6.1/alluxio-1.6.1-bin.tar.gz -P /var/lib/ambari-server/resources/stacks/HDP/2.6/services/ALLUXIO/package/files 
 
 ambari-server restart
 
@@ -39,3 +39,6 @@ defaultFS url
 Metrics
 Fix status check on start
 Clean up & Expand alluxio-env
+
+**Reference**
+https://github.com/chuyqa/alluxio-ambari-service
