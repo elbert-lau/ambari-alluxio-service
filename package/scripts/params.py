@@ -53,7 +53,7 @@ if len(alluxio_masters) > 1:
 
 host_name = config['hostname'];
 
-alluxio_master = None
+alluxio_master = '#alluxio.master.hostname=' + host_name
 for master in config['clusterHostInfo']['alluxio_master_hosts']:
   if master == host_name:
     alluxio_master = 'alluxio.master.hostname=' + host_name
