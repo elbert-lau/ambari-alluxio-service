@@ -46,8 +46,8 @@ class Master(Script):
 
     env.set_params(params)
 
-    alluxio_config_dir = params.base_dir + '/conf/'
-    alluxio_libexec_dir = params.base_dir + '/libexec/'
+    alluxio_config_dir = params.base_dir + 'conf/'
+    alluxio_libexec_dir = params.base_dir + 'libexec/'
 
     # alluxio-env.sh
     File(format("{alluxio_config_dir}/alluxio-env.sh"),
@@ -90,7 +90,7 @@ class Master(Script):
     self.configure(env)
     
     #execute the startup script
-    cmd = params.base_dir + '/bin/alluxio-start.sh ' + 'master'
+    cmd = params.base_dir + 'bin/alluxio-start.sh ' + 'master'
     
     Execute('echo "Running cmd: ' + cmd + '"')    
     Execute(cmd)
@@ -110,7 +110,7 @@ class Master(Script):
     self.configure(env)
 
     #execure the startup script
-    cmd = params.base_dir + '/bin/alluxio-stop.sh ' + 'master'
+    cmd = params.base_dir + 'bin/alluxio-stop.sh ' + 'master'
 
     Execute('echo "Running cmd: ' + cmd + '"')
     Execute(cmd)

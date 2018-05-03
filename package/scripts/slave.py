@@ -40,8 +40,8 @@ class Slave(Script):
     import params
     env.set_params(params)
 
-    alluxio_config_dir = params.base_dir + '/conf/'
-    alluxio_libexec_dir = params.base_dir + '/libexec/'
+    alluxio_config_dir = params.base_dir + 'conf/'
+    alluxio_libexec_dir = params.base_dir + 'libexec/'
 
     # alluxio-env.sh
     File(format("{alluxio_config_dir}/alluxio-env.sh"),
@@ -80,7 +80,7 @@ class Slave(Script):
     env.set_params(params)
     self.configure(env)
     #Mount ramfs
-    cmd = params.base_dir + '/bin/alluxio-start.sh ' + 'worker' + ' Mount'
+    cmd = params.base_dir + 'bin/alluxio-start.sh ' + 'worker' + ' Mount'
     
     Execute('echo "Running cmd: ' + cmd + '"')
     Execute(cmd)
@@ -97,7 +97,7 @@ class Slave(Script):
     env.set_params(params)
     self.configure(env)
     #execure the startup script
-    cmd = params.base_dir + '/bin/alluxio-stop.sh ' + 'worker'
+    cmd = params.base_dir + 'bin/alluxio-stop.sh ' + 'worker'
 
     Execute('echo "Running cmd: ' + cmd + '"')
     Execute(cmd)
