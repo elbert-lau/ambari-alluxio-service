@@ -35,12 +35,6 @@ class Master(Script):
     #call configure
     self.configure(env)
 
-    #call format
-    cmd = params.base_dir + 'bin/alluxio ' + 'format'
-      
-    Execute('echo "Running cmd: ' + cmd + '"')    
-    Execute(cmd)
-
   def configure(self, env):
     import params
 

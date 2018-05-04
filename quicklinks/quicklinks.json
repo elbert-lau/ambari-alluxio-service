@@ -10,7 +10,7 @@
         "component_name": "ALLUXIO_MASTER",
         "url":"%@://%@:%@",
         "port":{
-          "http_property": "alluxio.ui.port",
+          "http_property": "alluxio.master.web.port",
           "http_default_port": "19999",
           "regex": "^(\\d+)$",
           "site": "alluxio-ambari-config"

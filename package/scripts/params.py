@@ -12,7 +12,9 @@ config = Script.get_config()
 tmp_dir = Script.get_tmp_dir()
 
 # identify archive file
-alluxio_archive_file = config['configurations']['alluxio-env']['alluxio.archive.file']
+alluxio_archive_file = 'alluxio-1.6.1-hadoop-2.7-bin.tar.gz'
+
+#config['configurations']['alluxio-env']['alluxio.archive.file']
 
 # alluxio masters address
 alluxio_masters = config['clusterHostInfo']['alluxio_master_hosts']
@@ -25,7 +27,7 @@ alluxio_workers_str = '\n'.join(alluxio_workers)
 # alluxio underfs address
 underfs_addr = config['configurations']['alluxio-env']['alluxio.underfs.address']
 
-# alluxio worker memory alotment 
+# alluxio worker memory alotment
 worker_mem = config['configurations']['alluxio-env']['alluxio.worker.memory']
 
 # Find current stack and version to push agent files to
@@ -54,9 +56,11 @@ if len(alluxio_masters) > 1:
 host_name = config['hostname'];
 
 alluxio_master = '#alluxio.master.hostname=' + host_name
+alluxio_master_web_port = '#alluxio.master.web.port=' + config['configurations']['alluxio-env']['alluxio.master.web.port']
 for master in config['clusterHostInfo']['alluxio_master_hosts']:
   if master == host_name:
     alluxio_master = 'alluxio.master.hostname=' + host_name
+    alluxio_master_web_port = 'alluxio.master.web.port=' + config['configurations']['alluxio-env']['alluxio.master.web.port']
     break
 
 # Set install dir
@@ -73,3 +77,4 @@ log_dir = config['configurations']['alluxio-env']['alluxio.log.dir']
 # alluxio log dir
 pid_dir = config['configurations']['alluxio-env']['alluxio.pid.dir']
 
+java_home = commands.getoutput('echo $JAVA_HOME')

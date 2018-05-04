@@ -30,12 +30,6 @@
     <value>/var/run/alluxio</value>
   </property>
 
-  <property>
-    <name>alluxio.archive.file</name>
-    <description>alluxio archive file</description>
-    <value>alluxio-1.6.1-hadoop-2.7-bin.tar.gz</value>
-  </property>
-
   <property require-input="true">
     <name>alluxio.underfs.address</name>
     <description>Alluxio UnderFS Address</description>
@@ -48,7 +42,7 @@
     <value>hdfs://0.0.0.0:8020/alluxio/journal</value>
   </property>
 
-  <property>
+  <property require-input="true">
     <name>alluxio.worker.memory</name>
     <description>Alluxio Worker Memory</description>
     <value>2GB</value>
@@ -68,8 +62,8 @@
   </property>
 
   <property>
-    <name>alluxio.ui.port</name>
-    <description>Alluxio UI Port</description>
+    <name>alluxio.master.web.port</name>
+    <description>Alluxio Master Web Port</description>
     <value>19999</value>   
   </property>
 </configuration>
