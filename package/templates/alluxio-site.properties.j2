@@ -10,6 +10,8 @@ alluxio.underfs.hdfs.configuration=/etc/hadoop/conf/core-site.xml:/etc/hadoop/co
 #alluxio.keyvalue.enabled=true
 #alluxio.keyvalue.partition.size.bytes.max=256MB
 
+alluxio.logs.dir={{log_dir}}
+
 alluxio.worker.tieredstore.levels=1
 alluxio.worker.tieredstore.level0.alias=MEM
 alluxio.worker.tieredstore.level0.dirs.path=/mnt/ramdisk
@@ -21,8 +23,8 @@ alluxio.worker.tieredstore.level0.watermark.low.ratio=0.7
 #alluxio.worker.tieredstore.level1.dirs.quota=25GB
 #alluxio.worker.tieredstore.level1.watermark.high.ratio=0.9
 #alluxio.worker.tieredstore.level1.watermark.low.ratio=0.7
-#alluxio.worker.tieredstore.level2.alias=HDD
-#alluxio.worker.tieredstore.level2.dirs.path=/data/bigdata/alluxio
-#alluxio.worker.tieredstore.level2.dirs.quota=200GB
-#alluxio.worker.tieredstore.level2.watermark.high.ratio=0.9
-#alluxio.worker.tieredstore.level2.watermark.low.ratio=0.7
+alluxio.worker.tieredstore.level1.alias=HDD
+alluxio.worker.tieredstore.level1.dirs.path={{hdd_dirs}}
+alluxio.worker.tieredstore.level1.dirs.quota={{hdd_quota}}
+alluxio.worker.tieredstore.level1.watermark.high.ratio=0.9
+alluxio.worker.tieredstore.level1.watermark.low.ratio=0.7

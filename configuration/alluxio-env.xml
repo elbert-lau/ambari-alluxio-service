@@ -18,22 +18,34 @@
   ~ limitations under the License.
   -->
 <configuration>
-  <property>
+  <property require-input="true">
    <name>alluxio.log.dir</name>
    <description>Alluxio Log Directory</description>
    <value>/var/log/alluxio</value>
   </property>
 
-  <property>
+  <property require-input="true">
     <name>alluxio.pid.dir</name>
     <description>Alluxio pid Directory</description>
     <value>/var/run/alluxio</value>
   </property>
 
   <property require-input="true">
+    <name>alluxio.hdd.dirs</name>
+    <description>Alluxio HDD Directory</description>
+    <value>/hadoop/alluxio</value>
+  </property>
+  
+  <property require-input="true">
+    <name>alluxio.hdd.quota</name>
+    <description>Alluxio HDD Size(GB)</description>
+    <value>20GB</value>
+  </property>  
+  
+  <property require-input="true">
     <name>alluxio.underfs.address</name>
     <description>Alluxio UnderFS Address</description>
-    <value></value>
+    <value>/hadoop/underFSStorage</value>
   </property>
 
   <property require-input="true">
@@ -44,7 +56,7 @@
 
   <property require-input="true">
     <name>alluxio.worker.memory</name>
-    <description>Alluxio Worker Memory</description>
+    <description>Alluxio Worker Memory(GB)</description>
     <value>2GB</value>
   </property>
 

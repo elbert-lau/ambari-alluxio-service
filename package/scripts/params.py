@@ -74,7 +74,11 @@ alluxio_package_dir = "/var/lib/ambari-agent/cache/stacks/" + stack_name + "/" +
 # alluxio log dir
 log_dir = config['configurations']['alluxio-env']['alluxio.log.dir']
 
-# alluxio log dir
+# alluxio hdd dirs
+hdd_dirs = config['configurations']['alluxio-env']['alluxio.hdd.dirs']
+hdd_quota = config['configurations']['alluxio-env']['alluxio.hdd.quota']
+
+# alluxio pid dir
 pid_dir = config['configurations']['alluxio-env']['alluxio.pid.dir']
 
-java_home = commands.getoutput('echo $JAVA_HOME')
+# java_home = commands.getoutput('echo $JAVA_HOME')
