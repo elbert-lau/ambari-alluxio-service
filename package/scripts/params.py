@@ -45,8 +45,8 @@ else:
 # HA
 enabled_ha = 'alluxio.zookeeper.enabled=false'
 zk_addr = '#alluxio.zookeeper.address=' + config['configurations']['alluxio-env']['alluxio.zookeeper.address']
-journal_folder = '#alluxio.master.journal.folder=' + config['configurations']['alluxio-env']['alluxio.master.journal.folder']
-worker_timeout = '#alluxio.worker.block.heartbeat.timeout.ms=120000'
+journal_folder = 'alluxio.master.journal.folder=' + config['configurations']['alluxio-env']['alluxio.master.journal.folder']
+worker_timeout = 'alluxio.worker.block.heartbeat.timeout.ms=120000'
 if len(alluxio_masters) > 1:
   enabled_ha = 'alluxio.zookeeper.enabled=true'
   zk_addr = 'alluxio.zookeeper.address=' + config['configurations']['alluxio-env']['alluxio.zookeeper.address']
@@ -73,6 +73,7 @@ alluxio_package_dir = "/var/lib/ambari-agent/cache/stacks/" + stack_name + "/" +
 
 # alluxio log dir
 log_dir = config['configurations']['alluxio-env']['alluxio.log.dir']
+journal_dir = config['configurations']['alluxio-env']['alluxio.master.journal.folder']
 
 # alluxio hdd dirs
 hdd_dirs = config['configurations']['alluxio-env']['alluxio.hdd.dirs']

@@ -33,7 +33,7 @@
   <property require-input="true">
     <name>alluxio.hdd.dirs</name>
     <description>Alluxio HDD Directory</description>
-    <value>/hadoop/alluxio</value>
+    <value>/hadoop/alluxio/hdd</value>
   </property>
   
   <property require-input="true">
@@ -45,13 +45,13 @@
   <property require-input="true">
     <name>alluxio.underfs.address</name>
     <description>Alluxio UnderFS Address</description>
-    <value>/hadoop/underFSStorage</value>
+    <value>/hadoop/alluxio/underFSStorage</value>
   </property>
 
   <property require-input="true">
     <name>alluxio.master.journal.folder</name>
     <description>Alluxio Master Journal Folder</description>
-    <value>hdfs://0.0.0.0:8020/alluxio/journal</value>
+    <value>/hadoop/alluxio/journal</value>
   </property>
 
   <property require-input="true">

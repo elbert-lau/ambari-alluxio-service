@@ -21,6 +21,26 @@ class Slave(Script):
     cmd = '/bin/mkdir' + ' -p ' + params.base_dir
     Execute('echo "Running ' + cmd + '"')
     Execute(cmd)
+	
+	# Create the log_dir dir
+    cmd = '/bin/mkdir' + ' -p ' + params.log_dir 
+    Execute('echo "Running ' + cmd + '"')
+    Execute(cmd)
+	
+	# Create the hdd_dirs dir
+    cmd = '/bin/mkdir' + ' -p ' + params.hdd_dirs 
+    Execute('echo "Running ' + cmd + '"')
+    Execute(cmd)
+	
+	# Create the journal_dir dir
+    cmd = '/bin/mkdir' + ' -p ' + params.journal_dir 
+    Execute('echo "Running ' + cmd + '"')
+    Execute(cmd)
+	
+	# Create the underfs_addr dir
+    cmd = '/bin/mkdir' + ' -p ' + params.underfs_addr 
+    Execute('echo "Running ' + cmd + '"')
+    Execute(cmd)
 
     cmd = '/bin/tar' + ' -zxf ' + params.alluxio_package_dir + 'files/' +  params.alluxio_archive_file + ' --strip 1 -C ' + params.base_dir
     Execute('echo "Running ' + cmd + '"')
