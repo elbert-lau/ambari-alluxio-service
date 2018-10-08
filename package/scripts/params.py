@@ -42,6 +42,11 @@ if 'dfs.namenode.rpc-address' in config['configurations']['hdfs-site']:
 else:
   namenode_address = config['configurations']['core-site']['fs.defaultFS']
 
+host_name = config['hostname'];
+
+alluxio_master = '#alluxio.master.hostname=' + host_name
+alluxio_master_web_port = '#alluxio.master.web.port=' + config['configurations']['alluxio-env']['alluxio.master.web.port']
+
 # HA
 enabled_ha = 'alluxio.zookeeper.enabled=false'
 zk_addr = '#alluxio.zookeeper.address=' + config['configurations']['alluxio-env']['alluxio.zookeeper.address']
@@ -52,16 +57,9 @@ if len(alluxio_masters) > 1:
   zk_addr = 'alluxio.zookeeper.address=' + config['configurations']['alluxio-env']['alluxio.zookeeper.address']
   journal_folder = 'alluxio.master.journal.folder=' + config['configurations']['alluxio-env']['alluxio.master.journal.folder']
   worker_timeout = 'alluxio.worker.block.heartbeat.timeout.ms=120000'
-
-host_name = config['hostname'];
-
-alluxio_master = '#alluxio.master.hostname=' + host_name
-alluxio_master_web_port = '#alluxio.master.web.port=' + config['configurations']['alluxio-env']['alluxio.master.web.port']
-for master in config['clusterHostInfo']['alluxio_master_hosts']:
-  if master == host_name:
-    alluxio_master = 'alluxio.master.hostname=' + host_name
-    alluxio_master_web_port = 'alluxio.master.web.port=' + config['configurations']['alluxio-env']['alluxio.master.web.port']
-    break
+else:
+  alluxio_master = 'alluxio.master.hostname=' + alluxio_masters[0]
+  alluxio_master_web_port = 'alluxio.master.web.port=' + config['configurations']['alluxio-env']['alluxio.master.web.port']
 
 # Set install dir
 cmd = "/usr/bin/hdp-select versions"
