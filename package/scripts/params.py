@@ -45,7 +45,7 @@ else:
 host_name = config['hostname'];
 
 alluxio_master = '#alluxio.master.hostname=' + host_name
-alluxio_master_web_port = '#alluxio.master.web.port=' + config['configurations']['alluxio-env']['alluxio.master.web.port']
+alluxio_master_web_port = 'alluxio.master.web.port=' + config['configurations']['alluxio-env']['alluxio.master.web.port']
 
 # HA
 enabled_ha = 'alluxio.zookeeper.enabled=false'
@@ -59,7 +59,6 @@ if len(alluxio_masters) > 1:
   worker_timeout = 'alluxio.worker.block.heartbeat.timeout.ms=120000'
 else:
   alluxio_master = 'alluxio.master.hostname=' + alluxio_masters[0]
-  alluxio_master_web_port = 'alluxio.master.web.port=' + config['configurations']['alluxio-env']['alluxio.master.web.port']
 
 # Set install dir
 cmd = "/usr/bin/hdp-select versions"
