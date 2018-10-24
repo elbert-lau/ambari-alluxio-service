@@ -11,7 +11,7 @@ class AlluxioServiceCheck(Script):
     env.set_params(params)
     target_host = params.alluxio_masters[0]
     print ('Service check host is: ' + target_host)
-	
+
     #call format
     format_command = [ "ssh", target_host, params.base_dir + "/bin/alluxio", "format", "-s"]
     format_proc = subprocess.Popen(format_command, stdout=subprocess.PIPE, stderr=subprocess.PIPE)

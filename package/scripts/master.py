@@ -15,28 +15,28 @@ class Master(Script):
     # Install packages listed in metainfo.xml
     self.install_packages(env)
     env.set_params(params)
-	
+
     # Create the base_dir/alluxio dir
     cmd = '/bin/mkdir' + ' -p ' + params.base_dir 
     Execute('echo "Running ' + cmd + '"')
     Execute(cmd)
-	
-	# Create the log_dir dir
+
+    # Create the log_dir dir
     cmd = '/bin/mkdir' + ' -p ' + params.log_dir 
     Execute('echo "Running ' + cmd + '"')
     Execute(cmd)
-	
-	# Create the hdd_dirs dir
+
+    # Create the hdd_dirs dir
     cmd = '/bin/mkdir' + ' -p ' + params.hdd_dirs 
     Execute('echo "Running ' + cmd + '"')
     Execute(cmd)
-	
-	# Create the journal_dir dir
+
+    # Create the journal_dir dir
     cmd = '/bin/mkdir' + ' -p ' + params.journal_dir 
     Execute('echo "Running ' + cmd + '"')
     Execute(cmd)
-	
-	# Create the underfs_addr dir
+
+    # Create the underfs_addr dir
     cmd = '/bin/mkdir' + ' -p ' + params.underfs_addr 
     Execute('echo "Running ' + cmd + '"')
     Execute(cmd)
